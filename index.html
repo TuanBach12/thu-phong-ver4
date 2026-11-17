@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Thư Phòng">
+<meta name="theme-color" content="#f4f1ea">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Thư Phòng</title>
+</head>
+<body>
+
+<main id="shelf-view"></main>
+<button class="fab" id="fab" data-act="add" data-i="plus" data-s="26" aria-label="Thêm sách"></button>
+
+<section id="reader" hidden>
+  <header class="bar top">
+    <button class="ib" data-act="close" data-i="back" aria-label="Về kệ sách"></button>
+    <div class="r-title"><b id="r-title"></b><span id="r-sub"></span></div>
+    <button class="ib" data-act="search" data-i="search" aria-label="Tìm trong sách"></button>
+    <button class="ib" data-act="toc" data-i="list" aria-label="Mục lục, đánh dấu, ghi chú"></button>
+    <button class="ib" data-act="pen" data-i="pen" aria-label="Chế độ chọn chữ, tô sáng"></button>
+    <button class="ib" data-act="bookmark" data-i="bookmark" aria-label="Đánh dấu trang"></button>
+    <button class="ib" data-act="audio" data-i="headphones" aria-label="Nghe sách"></button>
+    <button class="ib aa" data-act="rset" aria-label="Cài đặt đọc">Aa</button>
+  </header>
+
+  <div id="stage">
+    <div id="page-wrap" class="paged">
+      <div id="epub-area"></div>
+      <div id="pdf-area"></div>
+    </div>
+  </div>
+  <div id="tap-layer" hidden></div>
+  <div id="selbar" hidden><button data-sel="hl">Tô sáng</button><button data-sel="ul">Gạch chân</button><button data-sel="note">Ghi chú</button><button data-sel="share">Ảnh</button><button data-sel="copy">Chép</button><button data-sel="x" aria-label="Đóng">✕</button></div>
+  <div id="r-foot"></div>
+
+  <footer class="bar bottom">
+    <input type="range" id="r-slider" min="0" max="1000" value="0" aria-label="Tiến độ đọc">
+    <div class="r-meta"><span id="r-chap"></span><span id="r-pct"></span></div>
+  </footer>
+  <div id="r-load">Đang mở sách…</div>
+</section>
+
+<div id="layer"></div>
+<div id="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
